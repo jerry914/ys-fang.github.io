@@ -21,9 +21,7 @@
           var qparts = url.split("?",1);
           if (qparts.length == 0){return "";}
           var querys = qparts[1];
-          if(querys.indexOf("src")>=0){
-              value.src = querys.split("=")[1];
-           }
+           value.src = querys.split("=")[1];
           return value;
           
         }
