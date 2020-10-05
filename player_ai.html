@@ -18,17 +18,17 @@
         function getValue(varname)
         {
           var url = window.location.href;
-          var qparts = url.split("?",1);
+          var qparts = url.split("?");
           if (qparts.length == 0){return "";}
-          var querys = qparts[1];
-           value.src = querys.split("=")[1];
+          var querys = qparts[2];
+          value.src = querys.split("=")[1];
           return value;
           
         }
         var w = window.innerWidth-10;
         var h = window.innerHeight-20;
         
-        document.getElementById("link").innerHTML = '<video id="video1" width="'+w+'" height="'+h+'" controls><source src="'+getValue("src").src+'" type="video/mp4"></video>';
+        document.getElementById("link").innerHTML = '<video id="video1" width="'+w+'" height="'+h+'" controls><source src="https://video.cloud.edu.tw/video/embed/embed_video.php?p='+getValue("src").src+'" type="video/mp4"></video>';
     </script>
 
   </body>
