@@ -9,9 +9,7 @@
 
   <!-- <body onresize="resizeWindow()"> -->
   <body>
-    <button onclick="playPause()" class="btn"></button> 
-    <div class="tri btn"  onclick="playPause()"></div>
-    <div class="mask btn"></div>
+    
   	<div class="videowrapper" id="link"></div>
     <script>
         var value = {};
@@ -25,10 +23,10 @@
           return value;
           
         }
-        var w = window.innerWidth-10;
-        var h = window.innerHeight-20;
-        
-        document.getElementById("link").innerHTML = '<video id="video1" width="'+w+'" height="'+h+'" controls><source src="https://video.cloud.edu.tw/video/embed/embed_video.php?p='+getValue("src").src+'" type="video/mp4"></video>';
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        document.getElementById("link").innerHTML = '<iframe src="https://video.cloud.edu.tw/video/embed/embed_video.php?p='+getValue("src").src+'" style="width:'+w+'px;height:'+h+'px;" frameborder="0" allowfullscreen></iframe>';
+        // '<video id="video1" width="'+w+'" height="'+h+'" controls><source src="https://video.cloud.edu.tw/video/embed/embed_video.php?p='+getValue("src").src+'" type="video/mp4"></video>';
     </script>
 
   </body>
@@ -81,32 +79,32 @@
     nw = window.innerWidth-10;
     nh = window.innerHeight-20;
 
-    document.getElementById("link").innerHTML = '<video id="video1" width="'+nw+'" height="'+nh+'" controls><source src="'+getValue("src").src+'" type="video/mp4"></video>';
+    // document.getElementById("link").innerHTML = '<video id="video1" width="'+nw+'" height="'+nh+'" controls><source src="'+getValue("src").src+'" type="video/mp4"></video>';
   }
-  var myVideo = document.getElementById("video1"); 
+//   var myVideo = document.getElementById("video1"); 
 
-  function playPause() { 
-    if (myVideo.paused) {
-      myVideo.play();
-      var btn = document.getElementsByClassName("btn");
-      for (var i = 0; i < btn.length; i++) {
-        btn[i].style = "display: none";
-      }
+//   function playPause() { 
+//     if (myVideo.paused) {
+//       myVideo.play();
+//       var btn = document.getElementsByClassName("btn");
+//       for (var i = 0; i < btn.length; i++) {
+//         btn[i].style = "display: none";
+//       }
       
-      console.log(btn);
-    }
-    else 
-      myVideo.pause(); 
-  } 
-  function openFullscreen() {
-    if (myVideo.requestFullscreen) {
-      myVideo.requestFullscreen();
-    } else if (myVideo.mozRequestFullScreen) { /* Firefox */
-      myVideo.mozRequestFullScreen();
-    } else if (myVideo.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-      myVideo.webkitRequestFullscreen();
-    } else if (myVideo.msRequestFullscreen) { /* IE/Edge */
-      myVideo.msRequestFullscreen();
-    }
-  }
+//       console.log(btn);
+//     }
+//     else 
+//       myVideo.pause(); 
+//   } 
+//   function openFullscreen() {
+//     if (myVideo.requestFullscreen) {
+//       myVideo.requestFullscreen();
+//     } else if (myVideo.mozRequestFullScreen) { /* Firefox */
+//       myVideo.mozRequestFullScreen();
+//     } else if (myVideo.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+//       myVideo.webkitRequestFullscreen();
+//     } else if (myVideo.msRequestFullscreen) { /* IE/Edge */
+//       myVideo.msRequestFullscreen();
+//     }
+//   }
 </script>
